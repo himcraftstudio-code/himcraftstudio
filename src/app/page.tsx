@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Heart, Leaf, Mountain, Scissors, Sparkles, Flower2, HandHeart, Recycle, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Heart, Leaf, Mountain, Flower2, HandHeart, Recycle, Star } from "lucide-react";
 import { getCategories, getFeaturedProducts } from "@/lib/catalogue";
 import ProductCard from "@/components/product-card";
 import WhatsAppLink from "@/components/whatsapp-link";
