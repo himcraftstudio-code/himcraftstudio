@@ -22,6 +22,13 @@ npm run build
 ```
 The static site is exported to `out/`. Deploy the contents of `out` to Cloudflare Pages. Build command: `npm run build`; output directory: `out`.
 
+## Before launch
+1. Replace `REPLACE_WITH_WHATSAPP_NUMBER`, `REPLACE_WITH_PHONE`, and `REPLACE_WITH_BUSINESS_EMAIL` in `src/data/site-settings.json` with the studio's real contact details.
+2. Replace the sample catalogue entries and illustrative SVGs with approved product names, descriptions, categories, and authentic product photographs.
+3. Confirm the purchased domain and connect it in Cloudflare Pages after the first deployment.
+
+The current catalogue and SVG artwork are starter placeholders, not verified live inventory or product photography. The WhatsApp link will not be ready until the number is configured.
+
 ## Update catalogue
 Edit `src/data/products.json` and `src/data/categories.json`. Product images belong in `public/images/products/`; category/hero images belong in `public/images/categories/` and `public/images/hero/`. Replace the starter image paths with your real product photography.
 
