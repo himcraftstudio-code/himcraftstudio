@@ -1,93 +1,68 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Heart, Leaf, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Heart, Leaf, Sparkles, WandSparkles } from "lucide-react";
 import { getCategories, getFeaturedProducts } from "@/lib/catalogue";
 import ProductCard from "@/components/product-card";
 import WhatsAppLink from "@/components/whatsapp-link";
 
 export default function HomePage() {
-  const categories = getCategories();
-  const featured = getFeaturedProducts();
+  const categories = getCategories().slice(0, 4);
+  const featured = getFeaturedProducts().slice(0, 4);
 
   return (
-    <>
-      <section className="hc-hero">
-        <div className="hc-hero-copy">
-          <span className="hc-kicker"><span /> THE ART OF SLOW-MADE THINGS</span>
-          <h1>Objects with<br />a little more <em>heart.</em></h1>
-          <p className="hc-hero-intro">Handcrafted crochet pieces, thoughtful gifts and everyday keepsakes — made stitch by stitch, with time and care.</p>
-          <div className="hc-hero-actions">
-            <Link href="/products" className="hc-button hc-button-dark">Explore the collection <ArrowUpRight size={17}/></Link>
-            <Link href="/about" className="hc-quiet-link">The story behind the stitches <ArrowDownRight size={16}/></Link>
+    <div className="hm-home">
+      <section className="hm-hero">
+        <div className="hm-hero-copy hm-reveal">
+          <div className="hm-eyebrow"><span className="hm-eyebrow-dot" /> THE HANDMADE EDIT · HIMACHAL, INDIA</div>
+          <h1>Little things.<br/><em>Lovely</em> feelings.</h1>
+          <p>Thoughtful crochet and woollen pieces, made slowly by hand. A little colour, a little comfort, and a whole lot of heart.</p>
+          <div className="hm-hero-actions">
+            <Link href="/products" className="hm-btn hm-btn-primary">Explore the collection <ArrowUpRight size={17}/></Link>
+            <Link href="/about" className="hm-text-link">Meet the maker <ArrowRight size={16}/></Link>
           </div>
-          <div className="hc-hero-foot"><span>01 — HANDMADE</span><span>02 — THOUGHTFUL</span><span>03 — ONE OF A KIND</span></div>
+          <div className="hm-proof"><span><Heart size={15}/> Made by hand</span><i/><span><Leaf size={15}/> Made with care</span></div>
         </div>
-        <div className="hc-hero-visual">
-          <div className="hc-hero-main-image"><Image src="/images/hero/hero-crochet.svg" alt="Handmade crochet-inspired floral artwork" fill priority sizes="(max-width: 800px) 100vw, 54vw"/></div>
-          <div className="hc-floating-note"><span className="hc-note-icon"><Heart size={17}/></span><span>Made slowly.<br/><em>Loved forever.</em></span></div>
-          <div className="hc-vertical-caption">HIMCRAFT STUDIO · HANDMADE IN EVERY DETAIL</div>
+        <div className="hm-hero-art hm-reveal hm-delay-1">
+          <div className="hm-art-backdrop"/>
+          <div className="hm-main-art"><Image src="/images/hero/hero-premium.svg" alt="Illustrated handmade crochet flower arrangement in soft pastel colours" fill priority sizes="(max-width: 760px) 100vw, 55vw"/></div>
+          <div className="hm-art-tag"><span>01 / 04</span><strong>Made to make<br/>you smile.</strong></div>
+          <div className="hm-stamp"><span>HIMCRAFT</span><Heart size={17} fill="currentColor"/><span>HANDMADE</span></div>
         </div>
-        <div className="hc-scroll-cue"><span>SCROLL TO EXPLORE</span><span className="hc-scroll-line"/></div>
+        <div className="hm-hero-bottom"><span>SCROLL A LITTLE</span><ArrowDown size={15}/><span className="hm-hero-bottom-line"/></div>
       </section>
 
-      <section className="hc-intro-band">
-        <span>NOT FACTORY-MADE.</span>
-        <p>Made with intention. <em>Made to mean something.</em></p>
-        <span>ALWAYS A LITTLE DIFFERENT.</span>
+      <section className="hm-marquee" aria-label="HimCraft Studio values"><div>MADE SLOWLY <b>✳</b> MADE WITH LOVE <b>✳</b> MADE TO BE KEPT <b>✳</b> MADE SLOWLY <b>✳</b> MADE WITH LOVE <b>✳</b></div></section>
+
+      <section className="hm-intro hm-section">
+        <div className="hm-intro-label"><span>01</span><span>THE HIMCRAFT FEELING</span></div>
+        <div className="hm-intro-content"><h2>Not just handmade.<br/><em>Heart-made.</em></h2><p>We believe the best things are made with time, care and a little imagination. Every stitch tells a story — and every piece is created to bring a small moment of joy into your everyday.</p><Link href="/about" className="hm-under-link">A little more about us <ArrowUpRight size={16}/></Link></div>
+        <div className="hm-intro-orb"><Sparkles size={25}/><span>Slow made<br/>with love</span></div>
       </section>
 
-      <section className="hc-section hc-collections">
-        <div className="hc-section-top">
-          <div><span className="hc-kicker">A WORLD OF LITTLE DETAILS</span><h2>Find your kind<br/>of <em>lovely.</em></h2></div>
-          <p>From cheerful blooms to cosy companions, explore pieces that bring warmth to everyday moments.</p>
+      <section className="hm-collections hm-section">
+        <div className="hm-section-heading"><div><div className="hm-eyebrow">02 · FIND YOUR FAVOURITE</div><h2>A little world<br/>of <em>wonder.</em></h2></div><p>Explore feel-good pieces for gifting, collecting and making your everyday a little more special.</p></div>
+        <div className="hm-category-grid">
+          {categories.map((cat, index) => <Link href={`/products/category/${cat.slug}`} className={`hm-category hm-category-${index+1}`} key={cat.slug}><div className="hm-category-art"><Image src={cat.image} alt={cat.name} fill sizes="(max-width: 700px) 45vw, 25vw"/><span className="hm-category-index">0{index+1}</span><span className="hm-category-arrow"><ArrowUpRight size={19}/></span></div><div className="hm-category-title"><h3>{cat.name}</h3><ArrowRight size={16}/></div><p>{cat.description}</p></Link>)}
         </div>
-        <div className="hc-collection-grid">
-          {categories.slice(0, 4).map((cat, index) => (
-            <Link href={`/products/category/${cat.slug}`} className={`hc-collection-card hc-collection-${index + 1}`} key={cat.slug}>
-              <div className="hc-collection-image"><Image src={cat.image} alt={cat.name} fill sizes="(max-width: 700px) 80vw, 30vw"/><span className="hc-collection-arrow"><ArrowUpRight size={20}/></span></div>
-              <div className="hc-collection-meta"><span>0{index + 1}</span><h3>{cat.name}</h3></div>
-              <p>{cat.description}</p>
-            </Link>
-          ))}
-        </div>
-        <div className="hc-center-link"><Link href="/products" className="hc-button hc-button-outline">See all collections <ArrowRight size={16}/></Link></div>
+        <div className="hm-center"><Link href="/products" className="hm-btn hm-btn-outline">View all creations <ArrowUpRight size={16}/></Link></div>
       </section>
 
-      <section className="hc-featured-section">
-        <div className="hc-section hc-featured-inner">
-          <div className="hc-section-top hc-featured-top">
-            <div><span className="hc-kicker">THE PIECES WE LOVE</span><h2>Small joys.<br/><em>Big feelings.</em></h2></div>
-            <div className="hc-featured-side"><p>A few favourites from the studio. Each one is an invitation to gift a little joy — or keep it for yourself.</p><Link href="/products" className="hc-quiet-link">Browse all creations <ArrowUpRight size={16}/></Link></div>
-          </div>
-          <div className="product-grid hc-product-grid">{featured.slice(0, 4).map((product) => <ProductCard key={product.id} product={product}/>)}</div>
-        </div>
+      <section className="hm-featured hm-section">
+        <div className="hm-section-heading"><div><div className="hm-eyebrow">03 · FROM THE STUDIO</div><h2>Made to be<br/><em>treasured.</em></h2></div><div className="hm-featured-aside"><p>Meet a few of our favourite creations. Each one is lovingly handmade and can be made just for you.</p><Link href="/products" className="hm-under-link">Explore everything <ArrowUpRight size={16}/></Link></div></div>
+        <div className="product-grid hm-product-grid">{featured.map((product) => <ProductCard key={product.id} product={product}/>)}</div>
       </section>
 
-      <section className="hc-manifesto">
-        <div className="hc-manifesto-image"><Image src="/images/hero/story-craft.svg" alt="Yarn and crochet craft illustration" fill sizes="(max-width: 800px) 100vw, 48vw"/></div>
-        <div className="hc-manifesto-copy">
-          <span className="hc-kicker">A NOTE FROM THE STUDIO</span>
-          <h2>There is beauty<br/>in taking <em>your time.</em></h2>
-          <p>We love the little imperfections, the texture of every loop and the feeling of making something by hand. HimCraft Studio is a home for thoughtful creations that carry a little more meaning.</p>
-          <Link href="/about" className="hc-button hc-button-dark">Get to know our story <ArrowUpRight size={17}/></Link>
-          <span className="hc-manifesto-signoff">With love, from HimCraft Studio <Heart size={14}/></span>
-        </div>
+      <section className="hm-story">
+        <div className="hm-story-image"><Image src="/images/hero/craft-detail.svg" alt="Soft pastel handmade crochet texture illustration" fill sizes="(max-width: 760px) 100vw, 50vw"/><span className="hm-image-caption">A LITTLE IMPERFECT. A LOT OF LOVE.</span></div>
+        <div className="hm-story-copy"><div className="hm-eyebrow">04 · THE BEAUTY OF SLOW</div><h2>Made by hand.<br/><em>Made to matter.</em></h2><p>In a world that moves fast, we choose to slow down. To enjoy the colours, the textures and the tiny details. HimCraft Studio is our little corner for creations that feel personal, joyful and full of warmth.</p><Link href="/about" className="hm-btn hm-btn-primary">Discover our story <ArrowUpRight size={16}/></Link><div className="hm-handwritten">A little love in every loop <Heart size={15}/></div></div>
       </section>
 
-      <section className="hc-process hc-section">
-        <div className="hc-process-heading"><span className="hc-kicker">A LITTLE SOMETHING, MADE FOR YOU</span><h2>From our hands<br/>to <em>your home.</em></h2></div>
-        <div className="hc-process-steps">
-          <article><span>01</span><Sparkles size={22}/><h3>Find your inspiration</h3><p>Explore the collection or share an idea for something personal.</p></article>
-          <article><span>02</span><Heart size={22}/><h3>Made with care</h3><p>We discuss the details, colours and finish for your special piece.</p></article>
-          <article><span>03</span><Leaf size={22}/><h3>Make it yours</h3><p>Your handmade creation is ready to be gifted, displayed or treasured.</p></article>
-        </div>
+      <section className="hm-made hm-section">
+        <div className="hm-made-heading"><div className="hm-eyebrow">05 · YOUR IDEA, OUR HANDS</div><h2>Something special<br/>starts with <em>hello.</em></h2><p>Have a colour in mind, a gift to make or a tiny idea you'd love to bring to life?</p></div>
+        <div className="hm-steps"><article><span>01</span><div className="hm-step-icon"><WandSparkles size={21}/></div><h3>Tell us your idea</h3><p>Share what you have in mind, from colours to the occasion.</p></article><article><span>02</span><div className="hm-step-icon"><Heart size={21}/></div><h3>Made with care</h3><p>We work through the little details and craft it by hand.</p></article><article><span>03</span><div className="hm-step-icon"><Sparkles size={21}/></div><h3>Made just for you</h3><p>Your one-of-a-kind creation is ready to be cherished.</p></article></div>
       </section>
 
-      <section className="hc-custom-cta">
-        <div><span className="hc-kicker">HAVE A LITTLE IDEA?</span><h2>Let's make it<br/><em>real.</em></h2></div>
-        <div className="hc-custom-copy"><p>A favourite colour, a thoughtful gift, a tiny detail you've been imagining. Tell us about it — custom enquiries are always welcome.</p><WhatsAppLink message="Hello HimCraft Studio! I'd love to discuss a custom handmade creation." label="Start a custom enquiry" className="hc-button hc-button-light"/><span>NO CART. NO RUSH. JUST A CONVERSATION.</span></div>
-        <div className="hc-cta-orbit">H<br/><span>♡</span></div>
-      </section>
-    </>
+      <section className="hm-contact-band"><div className="hm-contact-flower">✳</div><div><div className="hm-eyebrow">LET'S MAKE SOMETHING LOVELY</div><h2>Your idea deserves<br/><em>a little handmade magic.</em></h2></div><div className="hm-contact-action"><p>Tell us what you're dreaming up. We'd love to hear from you.</p><WhatsAppLink message="Hello HimCraft Studio! I'd love to discuss a custom handmade creation." label="Start a conversation" className="hm-btn hm-btn-light"/><span>PERSONAL ENQUIRIES · CUSTOM ORDERS WELCOME</span></div></section>
+    </div>
   );
 }
