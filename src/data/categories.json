@@ -1,0 +1,8 @@
+[
+  { "slug": "crochet-flowers", "name": "Crochet Flowers", "description": "Little blooms that last much longer than a season.", "image": "/images/categories/crochet-flowers.svg" },
+  { "slug": "soft-toys", "name": "Soft Toys & Amigurumi", "description": "Lovable little companions, stitched by hand.", "image": "/images/categories/soft-toys.svg" },
+  { "slug": "wearables", "name": "Wearables", "description": "Cosy handmade pieces for everyday moments.", "image": "/images/categories/wearables.svg" },
+  { "slug": "home-decor", "name": "Home & Decor", "description": "Warm details to make a space feel like yours.", "image": "/images/categories/home-decor.svg" },
+  { "slug": "accessories", "name": "Accessories", "description": "Small thoughtful pieces with a handmade touch.", "image": "/images/categories/accessories.svg" },
+  { "slug": "custom-gifts", "name": "Custom Gifts", "description": "Personalised creations for meaningful occasions.", "image": "/images/categories/custom-gifts.svg" }
+]
