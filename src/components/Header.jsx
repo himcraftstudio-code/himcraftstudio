@@ -6,9 +6,22 @@ import { useStore } from "../context/StoreContext.jsx";
 import { waLink } from "../utils.js";
 import Icon from "./Icon.jsx";
 
-export function Logo() {
-  if (site.logo) return <Link to="/" className="logo" aria-label={site.name}><img src={site.logo} alt={site.name} className="logo-img" /></Link>;
-  return <Link to="/" className="logo"><span className="logo-mark" aria-hidden="true">◎</span><span>{site.name}<small>{site.tagline.toUpperCase()}</small></span></Link>;
+export function Logo({ white = false }) {
+  if (site.logo) return (
+    <Link to="/" className="logo" aria-label={site.name}>
+      <img
+        src={white && site.logoWhite ? site.logoWhite : site.logo}
+        alt={site.name}
+        className="logo-img"
+      />
+    </Link>
+  );
+  return (
+    <Link to="/" className="logo">
+      <span className="logo-mark" aria-hidden="true">◎</span>
+      <span>{site.name}<small>{site.tagline.toUpperCase()}</small></span>
+    </Link>
+  );
 }
 
 export default function Header({ path = "/" }) {

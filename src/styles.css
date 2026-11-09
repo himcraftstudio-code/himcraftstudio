@@ -1299,7 +1299,35 @@ nav .active { color: var(--brand); }
   gap: clamp(20px, 3vw, 40px);
   padding-top: clamp(32px, 4vw, 52px);
 }
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 .foot-note { margin-top: 16px; max-width: 30ch; color: var(--text); font-size: var(--fs-sm); }
+
+/* social row in footer */
+.foot-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.foot-soc-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--sand) !important;
+  display: grid;
+  place-items: center;
+  transition: background .25s, transform .25s;
+  flex-shrink: 0;
+}
+.foot-soc-btn:hover {
+  background: var(--brand);
+  transform: translateY(-3px);
+}
 .foot-grid h4 {
   font-size: var(--fs-xs);
   margin-bottom: 14px;
@@ -1420,31 +1448,6 @@ nav .active { color: var(--brand); }
   font-weight: 600;
   box-shadow: var(--sh-lg);
   animation: toast .45s var(--ease);
-}
-
-/* ── cursor — simple dot ── */
-@media (pointer: fine) {
-  * { cursor: none !important; }
-}
-
-.cursor {
-  position: fixed;
-  top: 0; left: 0;
-  width: 10px; height: 10px;
-  margin: -5px 0 0 -5px;
-  border-radius: 50%;
-  background: var(--brand);
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0;
-  will-change: transform;
-  transition: opacity .25s, background .2s, transform .15s;
-}
-
-/* shrink slightly on hover over clickable things */
-.cursor.active {
-  background: var(--gold);
-  transform: translate(var(--x, 0), var(--y, 0)) scale(1.6);
 }
 
 
@@ -1699,7 +1702,7 @@ html { overflow-x: clip; }
     -webkit-tap-highlight-color: transparent;
     overscroll-behavior-y: none;
   }
-  .announce, .fab, .wa-pill, .burger, .cursor { display: none !important; }
+  .announce, .fab, .wa-pill, .burger { display: none !important; }
   nav  { display: none !important; }
   .header {
     top: 0;

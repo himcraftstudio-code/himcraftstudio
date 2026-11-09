@@ -24,6 +24,18 @@ export default function Icon({ name, size = 20, className = "" }) {
       <path d="M9.200 8.200c-.4.400-.6 1.200-.2 2.200.900 2 2.600 3.500 4.600 4.200 1 .3 1.800 0 2.200-.6l.2-.7-1.800-.9-.8.800c-1.200-.5-2.200-1.500-2.700-2.700l.8-.8-.8-1.800z" fill="currentColor" />
     </svg>
   );
+  if (name === "instagram") return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.700" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.500" cy="6.500" r=".8" fill="currentColor" stroke="none" />
+    </svg>
+  );
+  if (name === "facebook") return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.700" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
   return (
     <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill={name === "play" ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.600" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d={P[name]} />

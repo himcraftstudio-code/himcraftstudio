@@ -14,8 +14,13 @@ export const contact = {
 export const site = {
   name: "Him Craft Studio",
   tagline: "Handmade woolen creations",
-  logo: null, // e.g. "/images/logo.png" to show your logo image instead of the text logo
+  logo: "/images/logo.png",          // dark logo — used in header & footer
+  logoWhite: "/images/white-logo.png", // white logo — used on dark backgrounds
   announcement: "Order on WhatsApp  ·  Made to order ",
+  social: [
+    { label: "Instagram", icon: "instagram", url: "https://www.instagram.com/himcraftstudio/" },
+    { label: "Facebook",  icon: "facebook",  url: "https://www.facebook.com/people/Him-Craft-Studio/61568914106146/" },
+  ],
   nav: [
     { label: "Home", to: "/" },
     { label: "Catalog", to: "/shop", menu: true },

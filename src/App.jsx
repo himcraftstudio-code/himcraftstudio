@@ -6,7 +6,6 @@ import Footer from "./components/Footer.jsx";
 import WhatsAppFab from "./components/WhatsAppFab.jsx";
 import Preloader from "./components/Preloader.jsx";
 import TabBar from "./components/TabBar.jsx";
-import Cursor from "./components/Cursor.jsx";
 import { useStore } from "./context/StoreContext.jsx";
 import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
@@ -66,7 +65,6 @@ export default function App() {
       <WhatsAppFab />
       {!path.startsWith("/product/") && <TabBar path={path} />}
       {toast && <div className="toast" key={toast.id} role="status">{toast.msg}</div>}
-      <Cursor />
     </>
   );
 }
