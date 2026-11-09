@@ -1,0 +1,58 @@
+/* ===== Him Craft Studio — colour + design tokens =====
+   Change these values to re-colour the whole site. */
+:root {
+  /* Colours */
+  --bg:       #faf6ef;
+  --paper:    #ffffff;
+  --sand:     #f1e7d7;
+  --blush:    #f3e1dc;
+  --stone:    #e9e1d3;
+  --brand:    #4a2433;
+  --brand-d:  #361823;
+  --gold:     #b8893b;
+  --gold-l:   #dcb872;
+  --ink:      #2a1f1a;
+  --text:     #5c4d44;
+  --muted:    #7d6e63;
+  --line:     rgba(60,40,25,.13);
+  --dim:      #6e5646;
+  --blob1:    #f0d6c2;
+  --blob2:    #ead3da;
+  --wa:       #1fa855;
+
+  /* Border radius */
+  --r-sm:  10px;
+  --r-md:  18px;
+  --r-lg:  28px;
+  --r-xl:  40px;
+  --r-2xl: 56px;
+
+  /* Shadows */
+  --sh-sm:  0 2px 8px -2px rgba(42,31,26,.12);
+  --sh-md:  0 12px 32px -12px rgba(42,31,26,.28);
+  --sh-lg:  0 32px 64px -24px rgba(42,31,26,.38);
+  --sh-xl:  0 48px 80px -32px rgba(70,50,20,.55);
+
+  /* Transitions */
+  --ease:    cubic-bezier(.2,.7,.2,1);
+  --ease-in: cubic-bezier(.4,0,1,1);
+  --t-fast:  .18s;
+  --t-base:  .32s;
+  --t-slow:  .55s;
+
+  /* Type scale */
+  --fs-xs:   .72rem;
+  --fs-sm:   .84rem;
+  --fs-base: .94rem;
+  --fs-lg:   1.08rem;
+  --fs-xl:   1.25rem;
+  --fs-2xl:  1.6rem;
+
+  /* Layout */
+  --hdr: 76px;
+  --sp:  clamp(72px, 9vw, 128px);
+
+  /* Font stacks */
+  --display: "Instrument Serif","Cormorant Garamond",Georgia,serif;
+  --sans:    "Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
