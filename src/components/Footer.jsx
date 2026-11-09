@@ -16,7 +16,9 @@ export default function Footer() {
 
         {/* Brand column */}
         <div>
-          <Logo white />
+          <div className="foot-logo-wrap">
+            <Logo white />
+          </div>
           <p className="muted foot-note">{footer.blurb}</p>
 
           {/* Social icons */}
