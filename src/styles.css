@@ -1276,6 +1276,7 @@ nav .active { color: var(--brand); }
   resize: vertical;
   transition: border-color var(--t-fast), box-shadow var(--t-fast);
 }
+
 .enq-form input:focus,
 .enq-form select:focus,
 .enq-form textarea:focus {
