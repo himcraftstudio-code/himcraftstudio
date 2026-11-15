@@ -12,17 +12,18 @@ import Shop from "./pages/Shop.jsx";
 import Product from "./pages/Product.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 
-function Page({ path }) {
+function Page({ path, pageKey }) {
   const m = path.match(/^\/product\/([^/]+)$/);
-  if (path === "/") return <Home />;
-  if (path === "/shop") return <Shop />;
-  if (m) return <Product slug={decodeURIComponent(m[1])} />;
-  if (path === "/wishlist") return <Wishlist />;
+  if (path === "/") return <Home key={pageKey} />;
+  if (path === "/shop") return <Shop key={pageKey} />;
+  if (m) return <Product key={pageKey} slug={decodeURIComponent(m[1])} />;
+  if (path === "/wishlist") return <Wishlist key={pageKey} />;
   return <main className="page"><div className="container"><h1>Page not found</h1><Link to="/" className="btn">Go home</Link></div></main>;
 }
 
 export default function App() {
-  const { path } = useLocation();
+  const { path, search } = useLocation();
+  const pageKey = path + (search ? "?" + search : "");
   const bar = useRef(null);
   const { toast } = useStore();
   useEffect(() => window.scrollTo(0, 0), [path]);
@@ -60,7 +61,7 @@ export default function App() {
       <div className="progress"><i ref={bar} /></div>
       <div className="announce">{site.announcement}</div>
       <Header path={path} />
-      <Page path={path} />
+      <Page path={path} pageKey={pageKey} />
       <Footer />
       <WhatsAppFab />
       {!path.startsWith("/product/") && <TabBar path={path} />}
