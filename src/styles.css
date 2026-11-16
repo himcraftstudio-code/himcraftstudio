@@ -538,7 +538,8 @@ nav .active { color: var(--brand); }
   display: block;
   position: absolute;
   inset: -6% 0 0;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: 68% center;
   transform: translateY(var(--py, 0)) scale(1.08);
 }
@@ -726,7 +727,7 @@ nav .active { color: var(--brand); }
   width: min(100%, 420px);
   aspect-ratio: 1;
   background: #fff;
-  padding: 16px 16px 56px;
+  padding: 16px 16px 16px;
   box-shadow: var(--sh-xl);
   transform: rotate(-4deg);
   transition: transform .7s var(--ease);
@@ -813,8 +814,9 @@ nav .active { color: var(--brand); }
 .fold-img span {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: unset;
+  background-repeat: no-repeat;
   transform: scale(calc(1.04 + var(--p, 0) * .1));
 }
 
@@ -1307,7 +1309,7 @@ nav .active { color: var(--brand); }
 }
 /* ── logo image ── */
 .logo-img {
-  height: 44px;
+  height: 60px;
   width: auto;
   display: block;
   object-fit: contain;

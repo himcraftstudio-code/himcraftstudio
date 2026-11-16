@@ -33,7 +33,7 @@ export const site = {
     title: [{ text: "Every stitch," }, { text: "made by hand,", accent: true }, { text: "made to last." }],
     typed: ["Crochet bouquets.", "Cozy winter wear.", "Handmade bags.", "Custom colours & sizes."],
     sub: "From cozy hand-knit winter wear to beautiful crochet creations, Him Craft Studio brings the warmth, charm and timeless beauty of handmade woolen crafts to life, one stitch at a time.",
-    image: "https://picsum.photos/seed/himcraft-hero/800/900",
+    image: "/images/hero.png",
   },
   marquee: ["Hand-Crocheted", "Hand-Knit", "Made to Order", "Custom Colours", "Made with Patience"],
 };
@@ -46,7 +46,7 @@ export const stats = [
 
 export const collections = [
   { id: 1, slug: "bouquets", name: "Flower Bouquets", title: "Flowers that never wilt", text: "Hand-crocheted bouquets, single stems and potted plants. A gift that lasts long after the day is over.", bullets: ["Bouquets, stems and potted plants", "Colours made to match your occasion", "Perfect for gifting"], image: "https://picsum.photos/seed/col-bouquets/800/600", tone: "blush" },
-  { id: 2, slug: "sweaters", name: "Winter Wear", title: "Warmth, one stitch at a time", text: "Cozy hand-knit sweaters, cardigans, scarves, caps, gloves and socks for the cold months.", bullets: ["Sweaters, cardigans and shawls", "Caps, gloves and socks", "Sizes and colours made to order"], image: "https://picsum.photos/seed/col-winter/800/600", tone: "brand" },
+  { id: 2, slug: "sweaters", name: "Winter Wear", title: "Warmth, one stitch at a time", text: "Cozy hand-knit sweaters, cardigans, scarves, caps, gloves and socks for the cold months.", bullets: ["Sweaters, cardigans and shawls", "Caps, gloves and socks", "Sizes and colours made to order"], image: "/images/sweater.png", tone: "brand" },
   { id: 3, slug: "bags", name: "Bags & Accessories", title: "Small pieces, big charm", text: "Crochet totes and pouches, keychains and hair accessories, each made individually by hand.", bullets: ["Totes and sling pouches", "Keychains and charms", "Hair clips and scrunchies"], image: "https://picsum.photos/seed/col-bags/800/600", tone: "stone" },
   { id: 4, slug: "decor", name: "Home Décor", title: "Make your home cosier", text: "Cushion covers, coasters and more, to bring a handmade touch to every corner of your home.", bullets: ["Textured cushion covers", "Crochet coaster sets", "Custom pieces on request"], image: "https://picsum.photos/seed/col-decor/800/600", tone: "sand" },
 ];
@@ -54,7 +54,7 @@ export const collections = [
 export const story = {
   title: "Made with yarn, needles & patience.",
   text: "Every piece is individually hand-crocheted or hand-knit. No mass production, ever. Most pieces are crafted fresh once you enquire, so colours and sizes can be customised just for you.",
-  image: "https://picsum.photos/seed/himcraft-story/600/600",
+  image: "/images/ourstory.png",
 };
 
 export const process = [
